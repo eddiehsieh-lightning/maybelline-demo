@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#ffffff"><svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="400" fill="#fff"/><rect x="170" y="110" width="26" height="180" rx="4" fill="#F5D57A"/><rect x="206" y="170" width="26" height="120" rx="4" fill="#F5D57A"/><rect x="216" y="80" width="6" height="90" fill="#000"/><text x="200" y="340" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="30" fill="#000">makeup.com</text></svg></template>
+<x-dc>
+<helmet>
+<meta name="ext-resource-dependency" content="assets/shades/cb_main.png" data-resource-id="cb_main">
+<meta name="ext-resource-dependency" content="assets/shades/cb_sw.png" data-resource-id="cb_sw">
+<meta name="ext-resource-dependency" content="assets/shades/bb_main.png" data-resource-id="bb_main">
+<meta name="ext-resource-dependency" content="assets/shades/bb_sw.png" data-resource-id="bb_sw">
+<meta name="ext-resource-dependency" content="assets/shades/br_main.png" data-resource-id="br_main">
+<meta name="ext-resource-dependency" content="assets/shades/br_sw.png" data-resource-id="br_sw">
+<meta name="ext-resource-dependency" content="assets/shades/vb_main.png" data-resource-id="vb_main">
+<meta name="ext-resource-dependency" content="assets/shades/vb_sw.png" data-resource-id="vb_sw">
+<meta name="ext-resource-dependency" content="assets/shades/cb_alt01.png" data-resource-id="cb_alt01">
+<meta name="ext-resource-dependency" content="assets/texture.jpg" data-resource-id="texture">
+<meta name="ext-resource-dependency" content="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/atf/updated/maybelline-eye-mascara-colossal-bubble-atf-benefits.jpg" data-resource-id="benefits">
+<meta name="ext-resource-dependency" content="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/atf/updated/maybelline-eye-mascara-colossal-bubble-atf-application.jpg" data-resource-id="application">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff;color:#000;font-family:'Source Sans 3',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#000;text-decoration:none}a:hover{color:#C2177A}
+*{box-sizing:border-box}
+input.ba{-webkit-appearance:none;appearance:none;background:transparent}
+input.ba::-webkit-slider-thumb{-webkit-appearance:none;width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid #000;cursor:ew-resize}
+input.ba::-moz-range-thumb{width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid #000;cursor:ew-resize}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #000">
+  <div style="max-width:1280px;margin:0 auto;padding:14px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px">
+    <nav style="display:flex;gap:4px 18px;font-size:14px;line-height:20px;height:20px;overflow:hidden;letter-spacing:0.02em;text-transform:uppercase;flex-wrap:wrap">
+      <a href="#results">Results</a>
+      <a href="#how">How to apply</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#top" style="display:flex;flex-direction:column;align-items:center;line-height:1">
+      <span style="font-family:Figtree,sans-serif;font-weight:800;font-size:24px;letter-spacing:0.01em">makeup.com</span>
+      <span style="font-family:Figtree,sans-serif;font-weight:600;font-size:8px;letter-spacing:0.14em;margin-top:3px">BY L'ORÉAL</span>
+    </a>
+    <div style="display:flex;justify-content:flex-end">
+      <button onClick="{{ openCart }}" aria-label="Open bag" style="display:flex;align-items:center;gap:8px;background:#fff;color:#000;border:1px solid #000;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:9px 14px" style-hover="background:#000;color:#fff">Bag <span style="min-width:22px;height:22px;border-radius:11px;background:#C2177A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;padding:0 6px">{{ cartCount }}</span></button>
+    </div>
+  </div>
+</header>
+
+<div id="top" style="background:#f6f6f6">
+  <div style="max-width:1280px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;text-transform:uppercase;letter-spacing:0.02em">
+    <span>Home</span><span style="color:#C2177A">⟶</span><span>Products &amp; Reviews</span><span style="color:#C2177A">⟶</span><span>Mascara</span><span style="color:#C2177A">⟶</span><span style="font-weight:600">Colossal Bubble™</span>
+  </div>
+</div>
+
+<section style="max-width:1280px;margin:0 auto;padding:32px 20px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:40px;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="aspect-ratio:1/1;width:100%;max-width:min(100%,620px,62vh);margin:0 auto;overflow:hidden;position:relative;transition:background 0.3s;background:{{ heroTint }}">
+      <img src="{{ heroImg }}" alt="{{ heroAlt }}" style="width:100%;height:100%;object-fit:contain;display:block">
+      <div style="position:absolute;top:16px;left:16px;color:#fff;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;padding:7px 10px;background:{{ badgeBg }}">{{ badgeText }}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%;max-width:min(100%,620px,62vh);margin:0 auto">
+      <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="4">
+        <button onClick="{{ t.pick }}" aria-label="{{ t.alt }}" style="font-family:inherit;padding:0;aspect-ratio:1/1;cursor:pointer;overflow:hidden;background:{{ heroTint }};border:{{ t.ring }}">
+          <img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+        </button>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px;max-width:540px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center">
+      <span style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase">Maybelline New York · Mascara</span>
+      <a href="#reviews" style="display:flex;gap:6px;align-items:center;font-size:15px"><span style="color:#C2177A;letter-spacing:1px">★★★★★</span><strong style="font-weight:600">4.4</strong><span style="text-decoration:underline">484 reviews</span></a>
+    </div>
+    <h1 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:clamp(38px,5vw,60px);line-height:1.04;letter-spacing:-0.01em;text-wrap:balance">Bubble up every lash.</h1>
+    <p style="margin:0;font-size:20px;line-height:1.45;color:#222;text-wrap:pretty">Colossal Bubble™ Washable Mascara inflates 100% of lashes with airy, buildable volume and sleek separation — for up to 24 hours.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span style="border:1px solid #000;padding:6px 10px;font-size:14px">Up to 24HR wear</span>
+      <span style="border:1px solid #000;padding:6px 10px;font-size:14px">Buildable, no clumps</span>
+      <span style="border:1px solid #000;padding:6px 10px;font-size:14px">Washable</span>
+      <span style="border:1px solid #000;padding:6px 10px;font-size:14px">Contact lens safe</span>
+    </div>
+    <div id="shades" style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <div style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase">Shade: <strong style="font-weight:600">{{ shadeName }}</strong> <span style="text-transform:none;letter-spacing:0;color:#444">— {{ shadeDesc }}</span></div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,84px));gap:10px">
+        <sc-for list="{{ shades }}" as="s" hint-placeholder-count="4">
+          <button onClick="{{ s.pick }}" aria-label="{{ s.name }}" style="font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0;background:none;border:0;cursor:pointer">
+            <span style="width:52px;height:52px;border-radius:50%;padding:4px;background:#fff;display:block;border:{{ s.ring }}"><span style="display:block;width:100%;height:100%;border-radius:50%;background:{{ s.hex }}"></span></span>
+            <span style="font-size:12px;line-height:1.2;text-align:center;color:#222">{{ s.name }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:12px">
+      <span style="font-family:Figtree,sans-serif;font-weight:700;font-size:32px">$12.99</span>
+      <span style="font-size:15px;color:#444">0.33 fl oz</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;gap:10px">
+        <div style="display:flex;align-items:center;border:1px solid #000">
+          <button onClick="{{ qtyDec }}" aria-label="Decrease quantity" style="font-family:inherit;width:48px;height:100%;background:#fff;border:0;cursor:pointer;font-size:20px">−</button>
+          <span style="min-width:28px;text-align:center;font-family:Figtree,sans-serif;font-weight:700;font-size:17px">{{ qty }}</span>
+          <button onClick="{{ qtyInc }}" aria-label="Increase quantity" style="font-family:inherit;width:48px;height:100%;background:#fff;border:0;cursor:pointer;font-size:20px">+</button>
+        </div>
+        <button onClick="{{ addToBag }}" style="flex:1;display:flex;justify-content:center;align-items:center;gap:10px;background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:17px;letter-spacing:0.04em;text-transform:uppercase;padding:20px 24px" style-hover="background:#C2177A;color:#fff">{{ ctaLabel }} · {{ heroPrice }}</button>
+      </div>
+      <div style="font-size:14px;color:#444;text-align:center">Free shipping on orders $25+ · Ophthalmologist &amp; allergy tested</div>
+    </div>
+  </div>
+</section>
+
+<section id="tiktok" style="padding:8px 0 64px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:28px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#C2177A;font-weight:600">As seen on TikTok</div>
+      <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.1">Real lashes, real bubble</h2>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button onClick="{{ vidPrev }}" aria-label="Previous videos" style="font-family:inherit;width:48px;height:48px;border:1px solid #000;background:#fff;cursor:pointer;font-size:20px" style-hover="background:#000;color:#fff">⟵</button>
+      <button onClick="{{ vidNext }}" aria-label="Next videos" style="font-family:inherit;width:48px;height:48px;border:1px solid #000;background:#fff;cursor:pointer;font-size:20px" style-hover="background:#000;color:#fff">⟶</button>
+    </div>
+  </div>
+  <div ref="{{ vidRef }}" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;padding:0 max(20px,calc((100% - 1240px) / 2)) 8px;scrollbar-width:none">
+    <sc-for list="{{ videos }}" as="v" hint-placeholder-count="4">
+      <div style="flex:0 0 min(78vw,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:10px">
+        <div style="aspect-ratio:9/16;background:#000;overflow:hidden">
+          <iframe src="{{ v.src }}" title="{{ v.title }}" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="{{ true }}" loading="lazy" style="width:100%;height:100%;border:0;display:block"></iframe>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <a href="{{ v.url }}" target="_blank" rel="noopener" style="font-family:Figtree,sans-serif;font-weight:700;font-size:15px">{{ v.handle }}</a>
+          <button onClick="{{ addOne }}" style="font-family:Figtree,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 12px;border:1px solid #000;background:#fff;cursor:pointer" style-hover="background:#000;color:#fff">Add to bag</button>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="border-top:1px solid #000;border-bottom:1px solid #000">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+    <div style="padding:28px 20px;display:flex;flex-direction:column;gap:4px;border-right:1px solid #e2e2e2">
+      <span style="font-family:Figtree,sans-serif;font-weight:800;font-size:44px;line-height:1">100%</span><span style="font-size:15px;text-transform:uppercase;letter-spacing:0.06em">Of lashes inflated</span>
+    </div>
+    <div style="padding:28px 20px;display:flex;flex-direction:column;gap:4px;border-right:1px solid #e2e2e2">
+      <span style="font-family:Figtree,sans-serif;font-weight:800;font-size:44px;line-height:1">24HR</span><span style="font-size:15px;text-transform:uppercase;letter-spacing:0.06em">Wear</span>
+    </div>
+    <div style="padding:28px 20px;display:flex;flex-direction:column;gap:4px;border-right:1px solid #e2e2e2">
+      <span style="font-family:Figtree,sans-serif;font-weight:800;font-size:44px;line-height:1">4.4★</span><span style="font-size:15px;text-transform:uppercase;letter-spacing:0.06em">From 484 reviews</span>
+    </div>
+    <div style="padding:28px 20px;display:flex;flex-direction:column;gap:4px">
+      <span style="font-family:Figtree,sans-serif;font-weight:800;font-size:44px;line-height:1">4</span><span style="font-size:15px;text-transform:uppercase;letter-spacing:0.06em">Shades</span>
+    </div>
+  </div>
+</section>
+
+<section id="results" style="max-width:1280px;margin:0 auto;padding:80px 20px">
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;margin-bottom:32px">
+    <div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#C2177A;font-weight:600">Before &amp; after</div>
+    <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.1;text-wrap:balance">Drag to see the bubble effect</h2>
+  </div>
+  <div style="position:relative;aspect-ratio:1320/742;overflow:hidden;background:#f6f6f6;max-width:1100px;margin:0 auto">
+    <img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/btf/after-mny-maky-colossalbubble-developed-1320x742.jpg" alt="After Colossal Bubble" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <img src="assets/before.jpg" alt="Before" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:{{ baClip }}">
+    <div style="position:absolute;top:0;bottom:0;width:2px;background:#fff;pointer-events:none;left:{{ baLeft }}"></div>
+    <span style="position:absolute;top:14px;left:14px;background:#fff;padding:6px 10px;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Before</span>
+    <span style="position:absolute;top:14px;right:14px;background:#000;color:#fff;padding:6px 10px;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">After</span>
+    <input class="ba" type="range" min="0" max="100" value="{{ ba }}" onInput="{{ onBa }}" aria-label="Before and after slider" style="position:absolute;inset:0;width:100%;height:100%;margin:0;cursor:ew-resize">
+  </div>
+</section>
+
+
+<section style="background:#f6f6f6">
+  <div style="max-width:1280px;margin:0 auto;padding:80px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#fff"><img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/btf/mny-eye-mascara-colossal-bubble-atf-brush_1064px.jpg" alt="Inflator comb brush" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <h3 style="margin:0;font-family:Figtree,sans-serif;font-size:22px">Inflator comb brush</h3>
+      <p style="margin:0;font-size:17px;line-height:1.5;color:#333">Spiral-shaped with deep-cut bristles to lift, separate and inflate lashes from root to tip.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#fff"><img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/btf/carousel3-mny-maky-colossalbubble-developed-1064x1064.jpg" alt="Lightweight formula" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <h3 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:22px">Bubble-light formula</h3>
+      <p style="margin:0;font-size:17px;line-height:1.5;color:#333">Lightweight and buildable — keep adding coats without clumping, sticky or weighed-down lashes.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#fff"><img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/btf/carousel4-mny-maky-colossalbubble-developed-1064x1064.jpg" alt="24 hour wear" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <h3 style="margin:0;font-family:Figtree,sans-serif;font-size:22px">Up to 24HR wear</h3>
+      <p style="margin:0;font-size:17px;line-height:1.5;color:#333">Lashes stay sleek, separated and light from morning to night — then wash off with micellar water.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="max-width:1280px;margin:0 auto;padding:80px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px;align-items:center">
+  <div style="aspect-ratio:1/1;overflow:hidden;background:#f6f6f6"><img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/atf/updated/maybelline-eye-mascara-colossal-bubble-atf-application.jpg" alt="Applying Colossal Bubble mascara" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#C2177A;font-weight:600">How to apply</div>
+      <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.1">Hold. Extend. Build.</h2>
+    </div>
+    <div style="display:flex;gap:16px;border-top:1px solid #000;padding-top:18px"><span style="font-family:Figtree,sans-serif;font-weight:800;font-size:22px">01</span><p style="margin:0;font-size:18px;line-height:1.5">Hold the inflator comb brush against your lashes.</p></div>
+    <div style="display:flex;gap:16px;border-top:1px solid #000;padding-top:18px"><span style="font-family:Figtree,sans-serif;font-weight:800;font-size:22px">02</span><p style="margin:0;font-size:18px;line-height:1.5">Extend from root to tip, repeatedly.</p></div>
+    <div style="display:flex;gap:16px;border-top:1px solid #000;padding-top:18px"><span style="font-family:Figtree,sans-serif;font-weight:800;font-size:22px">03</span><p style="margin:0;font-size:18px;line-height:1.5">Add coats until you reach your bubbled-up look.</p></div>
+    <button onClick="{{ addOne }}" style="align-self:flex-start;background:#fff;color:#000;border:1px solid #000;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;padding:14px 20px" style-hover="background:#000;color:#fff">{{ ctaLabel }} ⟶</button>
+  </div>
+</section>
+
+<section style="position:relative;background:#f6f6f6;overflow:hidden">
+  <img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/copper-brown-update/maybelline-colossal-bubble-mascara-copper-brown-pdp-carrousel-newshade.jpg" alt="Copper Brown shade" style="width:100%;height:clamp(360px,44vw,580px);object-fit:cover;display:block">
+  <div style="position:absolute;inset:auto 0 0 0;padding:40px 20px;background:linear-gradient(transparent,rgba(0,0,0,0.75))">
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:620px">
+        <span style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;font-weight:600">New shade</span>
+        <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:clamp(32px,4.4vw,56px);line-height:1.05;color:#fff">Copper Brown. A copper shimmer for every eye color.</h2>
+      </div>
+      <button onClick="{{ pickCopper }}" style="background:#fff;color:#000;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;padding:16px 22px" style-hover="background:#C2177A;color:#fff">Add Copper Brown to bag</button>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:80px 20px">
+  <h2 style="margin:0 0 32px;font-family:Figtree,sans-serif;font-weight:700;font-size:clamp(28px,3.2vw,40px);line-height:1.1;text-align:center">Which Colossal is yours?</h2>
+  <div style="overflow-x:auto">
+    <div style="display:grid;grid-template-columns:140px repeat(3,minmax(180px,1fr));min-width:720px;border:1px solid #000;font-size:16px">
+      <div style="padding:18px;border-bottom:1px solid #e2e2e2"></div>
+      <div style="padding:18px;background:#000;color:#fff;font-family:Figtree,sans-serif;font-weight:700">Colossal Bubble™</div>
+      <div style="padding:18px;font-family:Figtree,sans-serif;font-weight:700;border-bottom:1px solid #e2e2e2">The Colossal®</div>
+      <div style="padding:18px;font-family:Figtree,sans-serif;font-weight:700;border-bottom:1px solid #e2e2e2">Colossal Curl Bounce®</div>
+      <div style="padding:18px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#555;border-bottom:1px solid #e2e2e2">End look</div>
+      <div style="padding:18px;background:#000;color:#fff;border-top:1px solid #333">Inflated lashes, sleek separation</div>
+      <div style="padding:18px;border-bottom:1px solid #e2e2e2">Dramatic volume</div>
+      <div style="padding:18px;border-bottom:1px solid #e2e2e2">Big, bouncy, curled volume</div>
+      <div style="padding:18px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#555;border-bottom:1px solid #e2e2e2">Brush</div>
+      <div style="padding:18px;background:#000;color:#fff;border-top:1px solid #333">Inflator comb</div>
+      <div style="padding:18px;border-bottom:1px solid #e2e2e2">Mega brush</div>
+      <div style="padding:18px;border-bottom:1px solid #e2e2e2">Curl and bounce</div>
+      <div style="padding:18px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#555">Formula</div>
+      <div style="padding:18px;background:#000;color:#fff;border-top:1px solid #333">Lash-inflating</div>
+      <div style="padding:18px">Collagen</div>
+      <div style="padding:18px">Memory curl</div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:#f6f6f6">
+  <div style="max-width:1280px;margin:0 auto;padding:72px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#C2177A;font-weight:600">Ratings &amp; reviews</div>
+      <div style="display:flex;align-items:baseline;gap:12px"><span style="font-family:Figtree,sans-serif;font-weight:800;font-size:72px;line-height:1">4.4</span><span style="color:#C2177A;font-size:24px;letter-spacing:2px">★★★★★</span></div>
+      <span style="font-size:17px;color:#333">Based on 484 reviews</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <sc-for list="{{ dist }}" as="d" hint-placeholder-count="5">
+        <div style="display:grid;grid-template-columns:52px 1fr 40px;gap:12px;align-items:center;font-size:15px">
+          <span>{{ d.label }}</span>
+          <div style="height:8px;background:#e2e2e2"><div style="height:100%;background:#000;width:{{ d.pct }}"></div></div>
+          <span style="text-align:right">{{ d.n }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div style="max-width:860px;margin:0 auto;padding:80px 20px">
+    <h2 style="margin:0 0 28px;font-family:Figtree,sans-serif;font-weight:700;font-size:clamp(28px,3.2vw,40px);line-height:1.1;text-align:center">Questions, answered</h2>
+    <div style="border-top:1px solid #000">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div style="border-bottom:1px solid #000">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;background:none;border:0;cursor:pointer;text-align:left;font-family:Figtree,sans-serif;font-weight:700;font-size:19px;color:#000">
+            <span>{{ f.q }}</span><span style="font-size:24px;font-weight:400">{{ f.sign }}</span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0 0 22px;font-size:17px;line-height:1.55;color:#333;max-width:720px">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:1px solid #000">
+  <div style="max-width:1280px;margin:0 auto;padding:80px 20px 120px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:clamp(32px,4vw,52px);line-height:1.05;text-wrap:balance">Ready to bubble up?</h2>
+      <p style="margin:0;font-size:19px;line-height:1.5;color:#333">Four shades: Copper Brown, Blackest Black, Brownish Black and Very Black.</p>
+      <div style="display:flex;gap:12px">
+        <sc-for list="{{ shades }}" as="s" hint-placeholder-count="4">
+          <button onClick="{{ s.pick }}" aria-label="{{ s.name }}" style="font-family:inherit;width:48px;height:48px;border-radius:50%;padding:4px;background:#fff;cursor:pointer;border:{{ s.ring }}">
+            <span style="display:block;width:100%;height:100%;border-radius:50%;background:{{ s.hex }}"></span>
+          </button>
+        </sc-for>
+      </div>
+      <button onClick="{{ addOne }}" style="display:flex;justify-content:center;gap:10px;background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:17px;letter-spacing:0.04em;text-transform:uppercase;padding:20px 24px;max-width:460px;width:100%" style-hover="background:#C2177A;color:#fff">{{ ctaLabel }} · {{ shadeName }} · $12.99</button>
+    </div>
+    <div style="aspect-ratio:1/1;overflow:hidden;background:#f6f6f6"><img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/atf/updated/maybelline-eye-mascara-colossal-bubble-atf-full-beauty.jpg" alt="Colossal Bubble full beauty look" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid #000;padding:32px 20px 110px">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+    <div style="display:flex;flex-direction:column;line-height:1">
+      <span style="font-family:Figtree,sans-serif;font-weight:800;font-size:20px">makeup.com</span>
+      <span style="font-family:Figtree,sans-serif;font-weight:600;font-size:7px;letter-spacing:0.14em;margin-top:3px">BY L'ORÉAL</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:18px;font-size:13px;text-transform:uppercase;letter-spacing:0.04em">
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a><span style="color:#555">© 2026 L'Oréal</span>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ stickyVisible }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid #000;box-shadow:0 -6px 20px rgba(0,0,0,0.06)">
+    <div style="max-width:1280px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px">
+      <span style="width:28px;height:28px;border-radius:50%;flex:none;background:{{ shadeHex }}"></span>
+      <div style="display:flex;flex-direction:column;flex:1;min-width:0">
+        <span style="font-family:Figtree,sans-serif;font-weight:700;font-size:16px">Colossal Bubble™ Mascara</span>
+        <span style="font-size:14px;color:#444">{{ shadeName }} · $12.99</span>
+      </div>
+      <button onClick="{{ addOne }}" style="background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;padding:16px 22px;white-space:nowrap" style-hover="background:#C2177A;color:#fff">{{ stickyLabel }}</button>
+    </div>
+  </div>
+</sc-if>
+
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:40;display:flex;justify-content:flex-end">
+    <div onClick="{{ closeCart }}" style="position:absolute;inset:0;background:rgba(0,0,0,0.4)"></div>
+    <aside role="dialog" aria-label="Your bag" style="position:relative;width:min(100%,440px);height:100%;background:#fff;display:flex;flex-direction:column;border-left:1px solid #000">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid #000">
+        <span style="font-family:Figtree,sans-serif;font-weight:700;font-size:20px">Your bag ({{ cartCount }})</span>
+        <button onClick="{{ closeCart }}" aria-label="Close" style="font-family:inherit;width:44px;height:44px;background:none;border:0;cursor:pointer;font-size:26px">×</button>
+      </div>
+      <div style="padding:16px 20px;background:#f6f6f6;display:flex;flex-direction:column;gap:8px">
+        <span style="font-size:15px">{{ freeShipMsg }}</span>
+        <div style="height:6px;background:#e2e2e2"><div style="height:100%;background:#C2177A;width:{{ freeShipPct }}"></div></div>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:0 20px">
+        <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:48px 0;text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center">
+            <span style="font-size:17px;color:#333">Your bag is empty.</span>
+            <button onClick="{{ addOne }}" style="background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;padding:14px 20px">Add {{ shadeName }}</button>
+          </div>
+        </sc-if>
+        <sc-for list="{{ cartItems }}" as="it" hint-placeholder-count="1">
+          <div style="display:grid;grid-template-columns:72px 1fr auto;gap:14px;padding:18px 0;border-bottom:1px solid #e2e2e2;align-items:start">
+            <div style="width:72px;height:72px;background:#f6f6f6;overflow:hidden"><img src="{{ it.img }}" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+            <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+              <span style="font-family:Figtree,sans-serif;font-weight:700;font-size:16px">Colossal Bubble™ Washable Mascara</span>
+              <span style="display:flex;align-items:center;gap:6px;font-size:14px;color:#444"><span style="width:12px;height:12px;border-radius:50%;background:{{ it.hex }}"></span>{{ it.name }}</span>
+              <div style="display:flex;align-items:center;gap:12px;margin-top:4px">
+                <div style="display:flex;align-items:center;border:1px solid #000;height:36px">
+                  <button onClick="{{ it.dec }}" aria-label="Decrease" style="font-family:inherit;width:36px;height:100%;background:#fff;border:0;cursor:pointer;font-size:16px">−</button>
+                  <span style="min-width:22px;text-align:center;font-weight:600">{{ it.qty }}</span>
+                  <button onClick="{{ it.inc }}" aria-label="Increase" style="font-family:inherit;width:36px;height:100%;background:#fff;border:0;cursor:pointer;font-size:16px">+</button>
+                </div>
+                <button onClick="{{ it.remove }}" style="font-family:inherit;background:none;border:0;cursor:pointer;font-size:14px;text-decoration:underline;padding:0">Remove</button>
+              </div>
+            </div>
+            <span style="font-family:Figtree,sans-serif;font-weight:700;font-size:16px">{{ it.line }}</span>
+          </div>
+        </sc-for>
+        <sc-if value="{{ hasUpsell }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:22px 0;display:flex;flex-direction:column;gap:12px">
+            <span style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600">Add another shade</span>
+            <sc-for list="{{ upsell }}" as="u" hint-placeholder-count="2">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #e2e2e2;padding:10px 12px">
+                <span style="display:flex;align-items:center;gap:10px;font-size:15px"><span style="width:20px;height:20px;border-radius:50%;background:{{ u.hex }}"></span>{{ u.name }} · $12.99</span>
+                <button onClick="{{ u.add }}" style="background:#fff;border:1px solid #000;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 12px">Add</button>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+      <sc-if value="{{ hasItems }}" hint-placeholder-val="{{ false }}">
+        <div style="border-top:1px solid #000;padding:20px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;font-size:17px"><span>Subtotal</span><strong style="font-family:Figtree,sans-serif">{{ subtotal }}</strong></div>
+          <span style="font-size:14px;color:#444">Shipping and taxes calculated at checkout.</span>
+          <button onClick="{{ goCheckout }}" style="background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:16px;letter-spacing:0.05em;text-transform:uppercase;padding:18px" style-hover="background:#C2177A">Checkout</button>
+        </div>
+      </sc-if>
+    </aside>
+  </div>
+</sc-if>
+
+<sc-if value="{{ checkoutOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:50;background:#fff;overflow-y:auto">
+    <div style="border-bottom:1px solid #000;position:sticky;top:0;background:#fff;z-index:2">
+      <div style="max-width:1120px;margin:0 auto;padding:14px 20px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px">
+        <button onClick="{{ backFromCheckout }}" style="font-family:inherit;justify-self:start;background:none;border:0;cursor:pointer;font-size:14px;text-transform:uppercase;letter-spacing:0.04em;padding:10px 0">⟵ {{ backLabel }}</button>
+        <div style="display:flex;flex-direction:column;align-items:center;line-height:1">
+          <span style="font-family:Figtree,sans-serif;font-weight:800;font-size:22px">makeup.com</span>
+          <span style="font-family:Figtree,sans-serif;font-weight:600;font-size:8px;letter-spacing:0.14em;margin-top:3px">BY L'ORÉAL</span>
+        </div>
+        <span style="justify-self:end;font-size:13px;text-transform:uppercase;letter-spacing:0.06em">Secure checkout</span>
+      </div>
+    </div>
+
+    <sc-if value="{{ step3 }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:640px;margin:0 auto;padding:72px 20px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+        <span style="width:64px;height:64px;border-radius:50%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px">✓</span>
+        <h1 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:40px;line-height:1.1">Thank you, {{ firstName }}!</h1>
+        <p style="margin:0;font-size:18px;line-height:1.5;color:#333">Order <strong>{{ orderNo }}</strong> is confirmed. A receipt is on its way to {{ email }}.</p>
+        <div style="width:100%;border:1px solid #000;padding:20px;display:flex;flex-direction:column;gap:10px;text-align:left">
+          <sc-for list="{{ cartItems }}" as="it" hint-placeholder-count="1">
+            <div style="display:flex;justify-content:space-between;font-size:16px"><span>Colossal Bubble™ · {{ it.name }} × {{ it.qty }}</span><span>{{ it.line }}</span></div>
+          </sc-for>
+          <div style="display:flex;justify-content:space-between;font-size:16px;color:#444"><span>Shipping · {{ shipName }}</span><span>{{ shipping }}</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:16px;color:#444"><span>Estimated tax</span><span>{{ tax }}</span></div>
+          <div style="display:flex;justify-content:space-between;font-family:Figtree,sans-serif;font-weight:700;font-size:20px;border-top:1px solid #e2e2e2;padding-top:10px"><span>Total</span><span>{{ total }}</span></div>
+        </div>
+        <button onClick="{{ finish }}" style="background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;padding:18px 28px">Continue shopping</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ inForm }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:1120px;margin:0 auto;padding:32px 20px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div style="display:flex;gap:10px;align-items:center;font-size:14px;text-transform:uppercase;letter-spacing:0.04em">
+            <span style="font-weight:{{ s1w }}">1. Shipping</span><span style="color:#C2177A">⟶</span><span style="font-weight:{{ s2w }}">2. Payment</span><span style="color:#C2177A">⟶</span><span>3. Confirmation</span>
+          </div>
+
+          <sc-if value="{{ step1 }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ submitShipping }}" style="display:flex;flex-direction:column;gap:22px">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <span style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;text-align:center;color:#444">Express checkout</span>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+                  <button type="button" onClick="{{ expressPay }}" style="height:48px;background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:16px">Apple Pay</button>
+                  <button type="button" onClick="{{ expressPay }}" style="height:48px;background:#FFC439;color:#000;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:800;font-size:16px">PayPal</button>
+                  <button type="button" onClick="{{ expressPay }}" style="height:48px;background:#fff;color:#000;border:1px solid #000;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:16px">G Pay</button>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:#555;text-transform:uppercase;letter-spacing:0.08em"><span style="flex:1;height:1px;background:#e2e2e2"></span>or<span style="flex:1;height:1px;background:#e2e2e2"></span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:22px">Contact</h2>
+                <input name="email" type="email" required placeholder="Email" autocomplete="email" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit">
+                <label style="display:flex;gap:10px;align-items:center;font-size:15px"><input type="checkbox" defaultChecked="{{ true }}" style="width:18px;height:18px;accent-color:#000"> Email me beauty tips and offers from Makeup.com</label>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:22px">Shipping address</h2>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                  <input name="first" required placeholder="First name" autocomplete="given-name" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit;min-width:0">
+                  <input name="last" required placeholder="Last name" autocomplete="family-name" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit;min-width:0">
+                </div>
+                <input name="address" required placeholder="Address" autocomplete="address-line1" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit">
+                <input name="address2" placeholder="Apt, suite (optional)" autocomplete="address-line2" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit">
+                <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px">
+                  <input name="city" required placeholder="City" autocomplete="address-level2" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit;min-width:0">
+                  <input name="state" required placeholder="State" autocomplete="address-level1" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit;min-width:0">
+                  <input name="zip" required placeholder="ZIP" inputmode="numeric" autocomplete="postal-code" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit;min-width:0">
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:22px">Shipping method</h2>
+                <sc-for list="{{ shipOptions }}" as="o" hint-placeholder-count="2">
+                  <button type="button" onClick="{{ o.pick }}" style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;background:#fff;cursor:pointer;text-align:left;font-family:inherit;font-size:16px;border:{{ o.ring }}">
+                    <span style="display:flex;flex-direction:column;gap:2px"><strong style="font-weight:600">{{ o.name }}</strong><span style="font-size:14px;color:#444">{{ o.eta }}</span></span>
+                    <strong style="font-family:Figtree,sans-serif">{{ o.price }}</strong>
+                  </button>
+                </sc-for>
+              </div>
+              <button type="submit" style="background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:16px;letter-spacing:0.05em;text-transform:uppercase;padding:20px" style-hover="background:#C2177A">Continue to payment</button>
+            </form>
+          </sc-if>
+
+          <sc-if value="{{ step2 }}" hint-placeholder-val="{{ false }}">
+            <form onSubmit="{{ submitPayment }}" style="display:flex;flex-direction:column;gap:22px">
+              <div style="border:1px solid #e2e2e2;padding:16px;display:flex;flex-direction:column;gap:10px;font-size:15px">
+                <div style="display:flex;justify-content:space-between;gap:12px"><span style="color:#555">Contact</span><span>{{ email }}</span></div>
+                <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e2e2;padding-top:10px"><span style="color:#555">Ship to</span><span style="text-align:right">{{ shipTo }}</span></div>
+                <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e2e2;padding-top:10px"><span style="color:#555">Method</span><span>{{ shipName }} · {{ shipping }}</span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:22px">Payment</h2>
+                <span style="font-size:14px;color:#444">All transactions are secure and encrypted.</span>
+                <input name="card" required placeholder="Card number" inputmode="numeric" autocomplete="cc-number" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                  <input name="exp" required placeholder="MM / YY" autocomplete="cc-exp" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit;min-width:0">
+                  <input name="cvc" required placeholder="Security code" inputmode="numeric" autocomplete="cc-csc" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit;min-width:0">
+                </div>
+                <input name="nameoncard" required placeholder="Name on card" autocomplete="cc-name" style="height:52px;border:1px solid #999;padding:0 14px;font-size:16px;font-family:inherit">
+                <label style="display:flex;gap:10px;align-items:center;font-size:15px"><input type="checkbox" defaultChecked="{{ true }}" style="width:18px;height:18px;accent-color:#000"> Billing address same as shipping</label>
+              </div>
+              <button type="submit" style="background:#000;color:#fff;border:0;cursor:pointer;font-family:Figtree,sans-serif;font-weight:700;font-size:16px;letter-spacing:0.05em;text-transform:uppercase;padding:20px" style-hover="background:#C2177A">Place order · {{ total }}</button>
+              <span style="font-size:13px;color:#555;text-align:center">By placing your order you agree to the Terms of Use and Privacy Policy.</span>
+            </form>
+          </sc-if>
+        </div>
+
+        <aside style="background:#f6f6f6;padding:24px;display:flex;flex-direction:column;gap:14px;position:sticky;top:90px">
+          <h2 style="margin:0;font-family:Figtree,sans-serif;font-weight:700;font-size:20px">Order summary</h2>
+          <sc-for list="{{ cartItems }}" as="it" hint-placeholder-count="1">
+            <div style="display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center">
+              <div style="position:relative;width:64px;height:64px;background:#fff">
+                <img src="{{ it.img }}" alt="" style="width:100%;height:100%;object-fit:cover">
+                <span style="position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;border-radius:11px;background:#000;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;padding:0 6px">{{ it.qty }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-weight:600;font-size:15px">Colossal Bubble™ Mascara</span><span style="font-size:14px;color:#444">{{ it.name }}</span></div>
+              <span style="font-weight:600">{{ it.line }}</span>
+            </div>
+          </sc-for>
+          <div style="border-top:1px solid #d6d6d6;padding-top:14px;display:flex;flex-direction:column;gap:8px;font-size:16px">
+            <div style="display:flex;justify-content:space-between"><span>Subtotal</span><span>{{ subtotal }}</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Shipping</span><span>{{ shipping }}</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Estimated tax</span><span>{{ tax }}</span></div>
+          </div>
+          <div style="border-top:1px solid #d6d6d6;padding-top:14px;display:flex;justify-content:space-between;font-family:Figtree,sans-serif;font-weight:700;font-size:22px"><span>Total</span><span>{{ total }}</span></div>
+        </aside>
+      </div>
+    </sc-if>
+  </div>
+</sc-if></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Add to bag&quot;,&quot;Buy now&quot;,&quot;Get yours&quot;],&quot;default&quot;:&quot;Add to bag&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Conversion&quot;},&quot;stickyBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversion&quot;}}">
+class Component extends DCLogic {
+  state = { shade: 0, faq: 0, scrolled: false, img: 0, ba: 50, qty: 1, cart: {}, cartOpen: false, step: 0, ship: 'std', info: {}, orderNo: '' };
+  PRICE = 12.99; FREE = 25; TAX = 0.0725;
+  SHIP = { std: { name: 'Standard', eta: '3–5 business days', cost: 4.95 }, exp: { name: 'Express', eta: '1–2 business days', cost: 12.95 } };
+  money(n) { return '$' + n.toFixed(2); }
+  add(i, n) { this.setState(s => ({ cart: { ...s.cart, [i]: (s.cart[i] || 0) + n }, cartOpen: true })); }
+  setQty(i, n) { this.setState(s => { const c = { ...s.cart }; if (n <= 0) delete c[i]; else c[i] = n; return { cart: c }; }); }
+  componentDidUpdate() { document.body.style.overflow = (this.state.cartOpen || this.state.step) ? 'hidden' : ''; }
+  B = 'https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/colossal-bubble-washable-mascara/';
+  SHADES = [
+    { k: 'cb', name: 'Copper Brown', desc: 'rich copper shimmer', hex: '#6d4132', tint: '#F6ECE4', badge: '#A57447', tag: 'New shade · Copper Brown' },
+    { k: 'bb', name: 'Blackest Black', desc: 'deep, intense black', hex: '#010101', tint: '#F4F4F4', badge: '#000000', tag: 'Blackest Black · Most intense' },
+    { k: 'br', name: 'Brownish Black', desc: 'softer black with brown undertones', hex: '#140807', tint: '#F4EFEC', badge: '#3A2320', tag: 'Brownish Black · Softer look' },
+    { k: 'vb', name: 'Very Black', desc: 'true black', hex: '#0a0a0a', tint: '#F2F2F2', badge: '#111111', tag: 'Very Black · True black' },
+  ];
+  vidRef = React.createRef();
+  VIDS = [['bettyyannhill', '7508786520476781870'], ['samanthamullino', '7497051691104226603'], ['sarahcramos', '7492075212112956714'], ['angie_beautytips', '7500667399897746719']];
+  scrollVids(dir) { const el = this.vidRef.current; if (el) el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: 'smooth' }); }
+  gallery(s) {
+    const r = (id, f) => (window.__resources||{})[id] || f;
+    const g = [{ src: r(s.k + '_main', `assets/shades/${s.k}_main.png`), alt: s.name + ' packshot' }, { src: r(s.k + '_sw', `assets/shades/${s.k}_sw.png`), alt: s.name + ' swatch' }];
+    if (s.k === 'cb') g.push({ src: r('cb_alt01', 'assets/shades/cb_alt01.png'), alt: 'Copper Brown before and after' }, { src: r('texture', this.B + this.IMGS[1].p), alt: 'Copper Brown texture' });
+    else g.push({ src: r('benefits', this.B + this.IMGS[2].p), alt: 'Benefits' }, { src: r('application', this.B + 'atf/updated/maybelline-eye-mascara-colossal-bubble-atf-application.jpg'), alt: 'Application' });
+    return g;
+  }
+  IMGS = [
+    { p: 'copper-brown-update/maybelline-colossal-bubble-mascara-copper-brown-804-041554111279-packshot-front-open-square.jpg', alt: 'Packshot' },
+    { p: 'copper-brown-update/maybelline-colossal-bubble-mascara-copper-brown-804-041554111279-texture.jpg', alt: 'Texture' },
+    { p: 'atf/updated/maybelline-eye-mascara-colossal-bubble-atf-benefits.jpg', alt: 'Benefits' },
+    { p: 'copper-brown-update/maybelline-colossal-bubble-mascara-copper-brown-pdp-ba.jpg', alt: 'Before and after' },
+  ];
+  FAQS = [
+    { q: 'How does it give lashes volume?', a: 'A lash-inflating formula plus the inflator comb brush lets you “bubble up” every lash — airy, defined volume that’s buildable and separating, without clumping.' },
+    { q: 'What does the spiral comb brush do?', a: 'It lifts and inflates every single lash and separates them for individual, defined volume.' },
+    { q: 'Is it a tubing mascara?', a: 'No. It’s a traditional film-forming volumizing mascara that coats each lash for volume, length and defined separation.' },
+    { q: 'How long does it last?', a: 'Up to 24 hours — lashes stay voluminous and separated from morning to night.' },
+    { q: 'How do I remove it?', a: 'Micellar water or any gentle eye makeup remover.' },
+    { q: 'Is it safe for sensitive eyes?', a: 'Yes. It’s ophthalmologist-tested and allergy-tested, suitable for sensitive eyes and contact lens wearers.' },
+  ];
+  DIST = [['5 star', 318], ['4 star', 93], ['3 star', 38], ['2 star', 15], ['1 star', 20]];
+  componentDidMount() {
+    this.onScroll = () => { const s = window.scrollY > 700; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); }
+  renderVals() {
+    const p = this.props, st = this.state, sh = this.SHADES[st.shade];
+    const items = Object.keys(st.cart).map(Number).sort().map(i => ({ i, ...this.SHADES[i], qty: st.cart[i] }));
+    const count = items.reduce((a, b) => a + b.qty, 0);
+    const sub = count * this.PRICE;
+    const shipCost = sub >= this.FREE ? 0 : this.SHIP[st.ship].cost;
+    const effShip = st.ship === 'exp' ? this.SHIP.exp.cost : shipCost;
+    const tax = Math.round(sub * this.TAX * 100) / 100;
+    const left = Math.max(0, this.FREE - sub);
+    const inf = st.info;
+    return {
+      ctaLabel: p.ctaLabel ?? 'Add to bag',
+      stickyLabel: p.ctaShort ?? 'Add to bag',
+      stickyVisible: (p.stickyBar ?? true) && st.scrolled && !st.cartOpen && !st.step,
+      qty: st.qty, heroPrice: this.money(this.PRICE * st.qty),
+      qtyInc: () => this.setState(s => ({ qty: Math.min(10, s.qty + 1) })),
+      qtyDec: () => this.setState(s => ({ qty: Math.max(1, s.qty - 1) })),
+      addToBag: () => this.add(st.shade, st.qty),
+      addOne: () => this.add(st.shade, 1),
+      openCart: () => this.setState({ cartOpen: true }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      cartOpen: st.cartOpen, cartCount: count,
+      isEmpty: count === 0, hasItems: count > 0,
+      cartItems: items.map(it => ({ ...it, img: (window.__resources||{})[it.k + '_main'] || `assets/shades/${it.k}_main.png`, line: this.money(it.qty * this.PRICE), inc: () => this.setQty(it.i, it.qty + 1), dec: () => this.setQty(it.i, it.qty - 1), remove: () => this.setQty(it.i, 0) })),
+      upsell: count ? this.SHADES.map((s, i) => ({ ...s, i })).filter(s => !st.cart[s.i]).slice(0, 2).map(s => ({ ...s, add: () => this.add(s.i, 1) })) : [],
+      hasUpsell: count > 0 && items.length < 4,
+      freeShipMsg: left > 0 ? `You're ${this.money(left)} away from free shipping` : 'You’ve unlocked free standard shipping',
+      freeShipPct: Math.min(100, sub / this.FREE * 100) + '%',
+      subtotal: this.money(sub),
+      shipping: effShip === 0 ? 'Free' : this.money(effShip),
+      shipName: this.SHIP[st.ship].name,
+      tax: this.money(tax), total: this.money(sub + effShip + tax),
+      shipOptions: ['std', 'exp'].map(k => ({ name: this.SHIP[k].name, eta: this.SHIP[k].eta, price: k === 'std' && sub >= this.FREE ? 'Free' : this.money(this.SHIP[k].cost), ring: st.ship === k ? '2px solid #000' : '1px solid #999', pick: () => this.setState({ ship: k }) })),
+      goCheckout: () => this.setState({ cartOpen: false, step: 1 }),
+      checkoutOpen: st.step > 0, inForm: st.step === 1 || st.step === 2,
+      step1: st.step === 1, step2: st.step === 2, step3: st.step === 3,
+      s1w: st.step === 1 ? '700' : '400', s2w: st.step === 2 ? '700' : '400',
+      backLabel: st.step === 2 ? 'Shipping' : 'Back to bag',
+      backFromCheckout: () => this.setState(s => s.step === 2 ? { step: 1 } : s.step === 3 ? { step: 0 } : { step: 0, cartOpen: true }),
+      submitShipping: e => { e.preventDefault(); const f = Object.fromEntries(new FormData(e.target)); this.setState({ info: f, step: 2 }); },
+      expressPay: () => this.setState({ info: { first: 'there', email: 'your email' }, step: 3, orderNo: 'MU' + Math.floor(100000 + Math.random() * 900000) }),
+      submitPayment: e => { e.preventDefault(); this.setState({ step: 3, orderNo: 'MU' + Math.floor(100000 + Math.random() * 900000) }); },
+      email: inf.email || '', firstName: inf.first || 'there', orderNo: st.orderNo,
+      shipTo: [inf.address, inf.city, inf.state, inf.zip].filter(Boolean).join(', '),
+      finish: () => this.setState({ step: 0, cart: {}, qty: 1 }),
+      shadeName: sh.name, shadeDesc: sh.desc, shadeHex: sh.hex,
+      shades: this.SHADES.map((s, i) => ({ ...s, ring: i === st.shade ? '2px solid #000' : '1px solid #d0d0d0', pick: () => this.setState({ shade: i, img: 0 }) })),
+      heroImg: this.gallery(sh)[st.img].src, heroAlt: this.gallery(sh)[st.img].alt,
+      vidRef: this.vidRef, vidPrev: () => this.scrollVids(-1), vidNext: () => this.scrollVids(1),
+      videos: this.VIDS.map(([h, id]) => ({ handle: '@' + h, title: `TikTok by @${h}`, url: `https://www.tiktok.com/@${h}/video/${id}`, src: `https://www.tiktok.com/player/v1/${id}?music_info=0&description=0&rel=0&controls=1&progress_bar=1&play_button=1` })),
+      heroTint: sh.tint, badgeBg: sh.badge, badgeText: sh.tag,
+      thumbs: this.gallery(sh).map((m, i) => ({ ...m, ring: i === st.img ? '2px solid #000' : '1px solid transparent', pick: () => this.setState({ img: i }) })),
+      ba: st.ba, baClip: `inset(0 ${100 - st.ba}% 0 0)`, baLeft: st.ba + '%',
+      onBa: e => this.setState({ ba: +e.target.value }),
+      pickCopper: () => { this.setState({ shade: 0 }); this.add(0, 1); },
+      dist: this.DIST.map(([label, n]) => ({ label, n, pct: (n / 484 * 100).toFixed(1) + '%' })),
+      faqs: this.FAQS.map((f, i) => ({ ...f, open: st.faq === i, sign: st.faq === i ? '−' : '+', toggle: () => this.setState({ faq: st.faq === i ? -1 : i }) })),
+    };
+  }
+}
+</script>
+</body>
+</html>
